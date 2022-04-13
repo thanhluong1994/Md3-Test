@@ -28,19 +28,21 @@
             <th>Quantity</th>
             <th>Color</th>
             <th>Description</th>
+            <th>Category</th>
             <th>Actions</th>
         </tr>
-        <c:forEach var="product" items="${product}">
+        <c:forEach var="product" items="${productList}">
             <tr>
                 <td><c:out value="${product.id_product}"/></td>
                 <td><c:out value="${product.name_product}"/></td>
                 <td><c:out value="${product.price}"/></td>
                 <td><c:out value="${product.quantity}"/></td>
-                <td><c:out value="${product.getcolor}"/></td>
+                <td><c:out value="${product.color}"/></td>
                 <td><c:out value="${product.description}"/></td>
+                <td><c:out value="${product.getCategory().getNam_category()}"/></td>
                 <td>
-                    <a href="/StudentServlet?action=edit&id=${product.id_product}">Edit</a>
-                    <a href="/StudentServlet?action=delete&id=${product.id_product}">Delete</a>
+                    <a href="/ProductServlet?action=edit&id=${product.id_product}">Edit</a>
+                    <a href="/ProductServlet?action=delete&id=${product.id_product}">Delete</a>
                 </td>
             </tr>
         </c:forEach>

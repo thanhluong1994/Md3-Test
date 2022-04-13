@@ -7,6 +7,10 @@ public class Category {
     public Category() {
     }
 
+    public Category(String nam_category) {
+        this.nam_category = nam_category;
+    }
+
     public Category(int id_category, String nam_category) {
         this.id_category = id_category;
         this.nam_category = nam_category;
