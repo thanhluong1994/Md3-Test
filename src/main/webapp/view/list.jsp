@@ -33,12 +33,12 @@
         </tr>
         <c:forEach var="product" items="${productList}">
             <tr>
-                <td><c:out value="${product.id_product}"/></td>
-                <td><c:out value="${product.name_product}"/></td>
-                <td><c:out value="${product.price}"/></td>
-                <td><c:out value="${product.quantity}"/></td>
-                <td><c:out value="${product.color}"/></td>
-                <td><c:out value="${product.description}"/></td>
+                <td><c:out value="${product.getId_product()}"/></td>
+                <td><c:out value="${product.getName_product()}"/></td>
+                <td><c:out value="${product.getPrice()}"/></td>
+                <td><c:out value="${product.getQuantity()}"/></td>
+                <td><c:out value="${product.getColor()}"/></td>
+                <td><c:out value="${product.getDescription()}"/></td>
                 <td><c:out value="${product.getCategory().getName_category()}"/></td>
                 <td>
                     <a href="/ProductServlet?action=edit&id=${product.id_product}">Edit</a>

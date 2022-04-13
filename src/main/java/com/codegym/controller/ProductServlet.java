@@ -11,6 +11,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "ProductServlet", value = "/ProductServlet")
@@ -100,7 +101,6 @@ public class ProductServlet extends HttpServlet {
         ProductDao productDao1 =new ProductDao();
         productDao1.deleteProduct(id);
 
-
         List<Product> productList = productDao.findAll();
         request.setAttribute("product", productList);
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/delete.jsp");
@@ -138,7 +138,8 @@ public class ProductServlet extends HttpServlet {
         Category category = categoryDao.findById(id_category);
         Product product=new Product(name_product,price,quantity,color,description,category);
         productDao.save(product);
-        request.setAttribute("product",productDao.findAll());
+        List<Product> productList=productDao.findAll();
+        request.setAttribute("productList",productList);
         RequestDispatcher dispatcher=request.getRequestDispatcher("view/list.jsp");
         dispatcher.forward(request,response);
     }

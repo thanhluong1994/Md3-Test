@@ -34,7 +34,7 @@
                 <th> Name:</th>
                 <td>
                     <input type="text" name="name" size="45"
-                           value="<c:out value='${product.name_product}' />"
+                           value="<c:out value='${product.getName_product()}' />"
                     />
                 </td>
             </tr>
@@ -42,7 +42,7 @@
                 <th> Price:</th>
                 <td>
                     <input type="text" name="price" size="45"
-                           value="<c:out value='${product.price}' />"
+                           value="<c:out value='${product.getPrice()}' />"
                     />
                 </td>
             </tr>
@@ -50,7 +50,7 @@
                 <th>Quantity:</th>
                 <td>
                     <input type="text" name="quantity" size="15"
-                           value="<c:out value='${product.quantity}' />"
+                           value="<c:out value='${product.getQuantity()}' />"
                     />
                 </td>
             </tr>
@@ -58,7 +58,7 @@
                 <th>Color:</th>
                 <td>
                     <input type="text" name="color" size="15"
-                           value="<c:out value='${product.color}' />"
+                           value="<c:out value='${product.getColor()}' />"
                     />
                 </td>
             </tr>
@@ -66,7 +66,7 @@
                 <th>Description:</th>
                 <td>
                     <input type="text" name="description" size="15"
-                           value="<c:out value='${product.description}' />"
+                           value="<c:out value='${product.getDescription()}' />"
                     />
                 </td>
             </tr>
@@ -75,7 +75,7 @@
                 <td>
                     <select name="category" id="">
                         <c:forEach items="${category}" var="c">
-                            <option value="${c.id_category}">${c.nam_category}</option>
+                            <option value="${c.getId_category()}">${c.getName_category()}</option>
                         </c:forEach>
                     </select>
                 </td>

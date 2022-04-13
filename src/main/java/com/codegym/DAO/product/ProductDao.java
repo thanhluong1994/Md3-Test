@@ -27,7 +27,7 @@ public class ProductDao implements IProductDao{
             ResultSet resultSet=preparedStatement.executeQuery();
             while (resultSet.next()){
                 int id_product=resultSet.getInt("id_product");
-                int id_category=resultSet.getInt("c.id_category");
+                int id_category=resultSet.getInt("id_category");
                 String name_category=resultSet.getString("category");
                 String name_product=resultSet.getString("name_product");
                 Double price=resultSet.getDouble("price");

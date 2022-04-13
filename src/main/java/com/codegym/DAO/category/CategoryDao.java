@@ -39,7 +39,7 @@ public class CategoryDao implements ICategoryDao{
         Connection connection=SingletonConnection.getConnection();
         Category category =null;
         try(
-                PreparedStatement preparedStatement=connection.prepareStatement("selec*from catagory where id_category=?");
+                PreparedStatement preparedStatement=connection.prepareStatement("select * from category where id_category=?");
                 ){
                     preparedStatement.setInt(1,id_product);
                     ResultSet resultSet=preparedStatement.executeQuery();
