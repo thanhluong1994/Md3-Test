@@ -2,7 +2,7 @@ package com.codegym.DAO.category;
 
 import com.codegym.connection.SingletonConnection;
 import com.codegym.model.Category;
-import com.codegym.model.Product;
+
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -35,17 +35,17 @@ public class CategoryDao implements ICategoryDao{
     }
 
     @Override
-    public Category findById(int id_category) {
+    public Category findById(int id_product) {
         Connection connection=SingletonConnection.getConnection();
         Category category =null;
         try(
                 PreparedStatement preparedStatement=connection.prepareStatement("selec*from catagory where id_category=?");
                 ){
-                    preparedStatement.setInt(1,id_category);
+                    preparedStatement.setInt(1,id_product);
                     ResultSet resultSet=preparedStatement.executeQuery();
                     while (resultSet.next()){
                         String name_category=resultSet.getString("name_category");
-                        category=new Category(id_category,name_category);
+                        category=new Category(id_product,name_category);
                     }
         } catch (SQLException e) {
             e.printStackTrace();

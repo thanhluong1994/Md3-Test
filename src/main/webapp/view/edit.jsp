@@ -16,7 +16,7 @@
 <center>
     <h1>Product Management</h1>
     <h2>
-        <a href="/ProductServlet?action=edit">List All Product</a>
+        <a href="/ProductServlet?action=product">List All Product</a>
     </h2>
 </center>
 <div align="center">

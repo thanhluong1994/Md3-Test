@@ -128,7 +128,7 @@ public class ProductServlet extends HttpServlet {
     }
 
     private void insertProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String name= request.getParameter("name");
+        String name_product= request.getParameter("name");
         double price=Double.valueOf(request.getParameter("price"));
         int quantity=Integer.parseInt(request.getParameter("quantity"));
         String color=request.getParameter("color");
@@ -136,7 +136,7 @@ public class ProductServlet extends HttpServlet {
         String idString =request.getParameter("category");
         int id_category=Integer.parseInt(idString);
         Category category = categoryDao.findById(id_category);
-        Product product=new Product(name,price,quantity,color,description,category);
+        Product product=new Product(name_product,price,quantity,color,description,category);
         productDao.save(product);
         request.setAttribute("product",productDao.findAll());
         RequestDispatcher dispatcher=request.getRequestDispatcher("view/list.jsp");

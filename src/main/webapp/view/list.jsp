@@ -39,7 +39,7 @@
                 <td><c:out value="${product.quantity}"/></td>
                 <td><c:out value="${product.color}"/></td>
                 <td><c:out value="${product.description}"/></td>
-                <td><c:out value="${product.getCategory().getNam_category()}"/></td>
+                <td><c:out value="${product.getCategory().getName_category()}"/></td>
                 <td>
                     <a href="/ProductServlet?action=edit&id=${product.id_product}">Edit</a>
                     <a href="/ProductServlet?action=delete&id=${product.id_product}">Delete</a>

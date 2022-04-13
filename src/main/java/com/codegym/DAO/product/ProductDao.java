@@ -14,7 +14,7 @@ import java.util.List;
 public class ProductDao implements IProductDao{
 
     public static final String FIND_ALL_PRODUCT = "select id_product,name_product,price,quantity,color,description,c.id_category,name_category as category from product p join category c on c.id_category = p.id_category;";
-    public static final String INSERT_PRODUCT = "insert into product (id_product,name_product,price,quantity,color,description) values (?,?,?,?,?,?);";
+    public static final String INSERT_PRODUCT = "insert into product (name_product,price,quantity,color,description,id_category) values (?,?,?,?,?,?);";
     public static final String FIND_BY_ID = "select id_product,name_product,price,quantity,color,description as category from product p join category c on c.id_category = p.id_category where id_product=?";
 
     @Override
@@ -86,8 +86,8 @@ public class ProductDao implements IProductDao{
                 PreparedStatement preparedStatement= connection.prepareStatement(INSERT_PRODUCT);
         ) {
             preparedStatement.setString(1,product.getName_product());
-            preparedStatement.setInt(2,product.getQuantity());
-            preparedStatement.setDouble(3,product.getPrice());
+            preparedStatement.setDouble(2,product.getPrice());
+            preparedStatement.setInt(3,product.getQuantity());
             preparedStatement.setString(4,product.getColor());
             preparedStatement.setString(5,product.getDescription());
             preparedStatement.setInt(6,product.getCategory().getId_category());
